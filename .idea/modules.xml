@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ScalaSocketsTarea/ScalaSocketsTarea.iml" filepath="$PROJECT_DIR$/ScalaSocketsTarea/ScalaSocketsTarea.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scalasocketstarea.iml" filepath="$PROJECT_DIR$/.idea/modules/scalasocketstarea.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scalasocketstarea-build.iml" filepath="$PROJECT_DIR$/.idea/modules/scalasocketstarea-build.iml" />
     </modules>
   </component>
 </project>
