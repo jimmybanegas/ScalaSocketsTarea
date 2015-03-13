@@ -1,12 +1,14 @@
 /**
- * Created by Jimmy Banegas on 11/03/2015.
+ * Created by Affisa-Jimmy on 13/03/2015.
  */
+
 import java.net._
 import java.io._
 import scala.io._
 
-object Hello {
-  def main(args: Array[String]) {
+object Servidor {
+  // Simple server
+  def main(args: Array[String]): Unit = {
     val server = new ServerSocket(9999)
     while (true) {
       val s = server.accept()
