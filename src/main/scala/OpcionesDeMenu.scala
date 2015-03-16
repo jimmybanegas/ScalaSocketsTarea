@@ -7,9 +7,11 @@ import scala.xml.dtd.ValidationException
 object OpcionesDeMenu {
   def Listar(): Unit = {
     println(TasaDeCambio.getTasa().toString)
-
     val resp = Cliente.iniciarCliente("Listar\n")
-    resp.split("-").foreach(e => println(e))
+
+    //resp.split("-").foreach(e => println(e.split(" ").apply(4).toDouble / TasaDeCambio.getTasa()))
+
+    resp.split("-").foreach(e => println(e + " $."+ (e.split(" ").apply(4).toDouble / TasaDeCambio.getTasa()) ))
   }
 
   def Buscar(): Unit = {
@@ -31,15 +33,15 @@ object OpcionesDeMenu {
 
     if(resp!= "No existe"){
 
-      println("Ingrese nombre: ")
+      print("Ingrese nombre: ")
       val nombre = scala.io.StdIn.readLine().toString
-      println("Ingrese correo: ")
+      print("Ingrese correo: ")
       val correo = scala.io.StdIn.readLine()
-      println("Ingrese salario: ")
+      print("Ingrese salario: ")
       val salario = scala.io.StdIn.readLine()
-      println("Ingrese identidad: ")
+      print("Ingrese identidad: ")
       val identidad = scala.io.StdIn.readLine()
-      println("Ingrese telefono: ")
+      print("Ingrese telefono: ")
       val telefono = scala.io.StdIn.readLine()
 
       if(Validaciones.correoEsValido(correo) && Validaciones.nombreEsValido(nombre) &&
@@ -61,15 +63,15 @@ object OpcionesDeMenu {
   }
 
   def agregar ()  ={
-    println("Ingrese nombre: ")
+    print("Ingrese nombre: ")
     val nombre = scala.io.StdIn.readLine().toString
-    println("Ingrese correo: ")
+    print("Ingrese correo: ")
     val correo = scala.io.StdIn.readLine()
-    println("Ingrese salario: ")
+    print("Ingrese salario: ")
     val salario = scala.io.StdIn.readLine()
-    println("Ingrese identidad: ")
+    print("Ingrese identidad: ")
     val identidad = scala.io.StdIn.readLine()
-    println("Ingrese telefono: ")
+    print("Ingrese telefono: ")
     val telefono = scala.io.StdIn.readLine()
 
    if(Validaciones.correoEsValido(correo) && Validaciones.nombreEsValido(nombre) &&
