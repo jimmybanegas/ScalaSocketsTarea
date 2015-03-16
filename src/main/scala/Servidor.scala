@@ -15,7 +15,23 @@ object Servidor {
       val in = new BufferedSource(s.getInputStream()).getLines()
       val out = new PrintStream(s.getOutputStream())
 
-      out.println(in.next())
+      val op = in.next()
+
+      println(op)
+
+      var resp = ""
+
+      if(op == "Agregar")
+         Archivos.escribir(in.next())
+      else if(op == "Buscar"){
+        resp = Archivos.buscar(in.next())
+      }else if (op=="Listar"){
+        resp = Archivos.listar()
+      }else if( op == "Modificar"){
+        Archivos.editar("","")
+      }
+
+      out.println(resp)
       out.flush()
       s.close()
     }

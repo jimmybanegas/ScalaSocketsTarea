@@ -9,10 +9,10 @@ import scala.io.BufferedSource
 object Menu {
   def main(args: Array[String]): Unit = {
     while (true){
-      println("1. Agregar")
-      println("2. Buscar")
-      println("3. Listar")
-      println("4. Modificar")
+      println("\n1. Agregar")
+      println("2. Modificar")
+      println("3. Buscar")
+      println("4. Listar")
       println("5. Salir")
       println("Ingrese su opcion")
 
@@ -20,9 +20,9 @@ object Menu {
 
       opcion match {
         case 1  => OpcionesDeMenu.agregar()
-        case 2  => println("February")
-        case 3  => println("March")
-        case 4  => println("April")
+        case 2  => OpcionesDeMenu.Modificar()
+        case 3  => OpcionesDeMenu.Buscar()
+        case 4  => OpcionesDeMenu.Listar()
         case 5  => sys.exit()
         case whoa  => println("Unexpected case: " + whoa.toString)
       }

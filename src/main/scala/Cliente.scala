@@ -8,15 +8,16 @@ import scala.io._
 
 object Cliente {
   // Simple client
-  def main(args: Array[String]): Unit = {
+  def iniciarCliente(mensaje: String): String = {
     val s = new Socket(InetAddress.getByName("localhost"), 9999)
     lazy val in = new BufferedSource(s.getInputStream()).getLines()
     val out = new PrintStream(s.getOutputStream())
 
-    out.println("Hello, world")
+    out.println(mensaje)
     out.flush()
-    println("Received: " + in.next())
+    //println("Received: " + in.next())
+  //  s.close()
 
-    s.close()
+    return  in.next()
   }
 }
