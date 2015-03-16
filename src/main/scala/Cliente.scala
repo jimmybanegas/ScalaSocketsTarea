@@ -15,8 +15,6 @@ object Cliente {
 
     out.println(mensaje)
     out.flush()
-    //println("Received: " + in.next())
-  //  s.close()
 
     return  in.next()
   }

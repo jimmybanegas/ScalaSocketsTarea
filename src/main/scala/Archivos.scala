@@ -28,12 +28,6 @@ object Archivos {
     val ans = for (line <- Source.fromFile("Empleados.txt").getLines) yield (line.replace(anterior, nuevo))
 
     ans foreach println
-
-    val  fr = new FileReader("Empleados.txt");
-    val br = new BufferedReader(fr);
-    val fw = new FileWriter("Empleados.txt");
-    val out = new PrintWriter(fw);
-
   }
 
   def listar (): String= {

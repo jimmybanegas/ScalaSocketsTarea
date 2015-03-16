@@ -14,7 +14,7 @@ object Menu {
       println("3. Buscar")
       println("4. Listar")
       println("5. Salir")
-      println("Ingrese su opcion")
+      print("Ingrese su opcion: ")
 
       val opcion = scala.io.StdIn.readInt()
 

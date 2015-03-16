@@ -28,7 +28,7 @@ object Servidor {
       }else if (op=="Listar"){
         resp = Archivos.listar()
       }else if( op == "Modificar"){
-        Archivos.editar("","")
+        Archivos.editar(in.next(),in.next())
       }
 
       out.println(resp)
