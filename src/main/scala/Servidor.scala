@@ -29,8 +29,9 @@ object Servidor {
         resp = Archivos.listar()
       }else if( op == "Modificar"){
         Archivos.editar(in.next(),in.next())
+      }else if ( op == "EsRepetido"){
+        resp = Archivos.esRepetido(in.next())
       }
-
       out.println(resp)
       out.flush()
       s.close()

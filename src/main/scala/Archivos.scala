@@ -23,11 +23,14 @@ object Archivos {
     return  "No existe"
   }
 
-
   def editar (anterior:String,nuevo:String) = {
-    val ans = for (line <- Source.fromFile("Empleados.txt").getLines) yield (line.replace(anterior, nuevo))
+    val f = new RandomAccessFile(new File("Empleados.txt"), "rw");
+    f.seek(0);
 
-    ans foreach println
+    val ans = for (line <- Source.fromFile("Empleados.txt").getLines)
+        f.write((line.replace(anterior, nuevo)+"\r\n").getBytes())
+
+    f.close()
   }
 
   def listar (): String= {
@@ -38,12 +41,12 @@ object Archivos {
     return lines
   }
 
-  def esRepetido(parametro:String) :Boolean  =  {
+  def esRepetido(parametro:String) :String  =  {
     for(line <- Source.fromFile("Empleados.txt").getLines())
       if (line.contains(parametro))
-        return true
+        return "Repetido"
 
-    return  false
+    return  ""
   }
 
 }

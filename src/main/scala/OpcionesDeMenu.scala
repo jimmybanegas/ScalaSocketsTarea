@@ -6,10 +6,9 @@ import scala.xml.dtd.ValidationException
  */
 object OpcionesDeMenu {
   def Listar(): Unit = {
-    println(TasaDeCambio.getTasa().toString)
-    val resp = Cliente.iniciarCliente("Listar\n")
+    //println(TasaDeCambio.getTasa().toString)
 
-    //resp.split("-").foreach(e => println(e.split(" ").apply(4).toDouble / TasaDeCambio.getTasa()))
+    val resp = Cliente.iniciarCliente("Listar\n")
 
     resp.split("-").foreach(e => println(e + " $."+ (e.split(" ").apply(4).toDouble / TasaDeCambio.getTasa()) ))
   }
@@ -33,15 +32,15 @@ object OpcionesDeMenu {
 
     if(resp!= "No existe"){
 
-      print("Ingrese nombre: ")
+      print("Ingrese nuevo nombre: ")
       val nombre = scala.io.StdIn.readLine().toString
-      print("Ingrese correo: ")
+      print("Ingrese nuevo correo: ")
       val correo = scala.io.StdIn.readLine()
-      print("Ingrese salario: ")
+      print("Ingrese nuevo salario: ")
       val salario = scala.io.StdIn.readLine()
-      print("Ingrese identidad: ")
+      print("Ingrese nueva identidad: ")
       val identidad = scala.io.StdIn.readLine()
-      print("Ingrese telefono: ")
+      print("Ingrese nuevo telefono: ")
       val telefono = scala.io.StdIn.readLine()
 
       if(Validaciones.correoEsValido(correo) && Validaciones.nombreEsValido(nombre) &&
@@ -50,11 +49,12 @@ object OpcionesDeMenu {
         val emp = new Empleado(resp.substring(0,4),nombre,correo,salario,identidad,telefono);
 
         val r_back: String = Cliente.iniciarCliente("Modificar\n"+resp+"\n"+emp.toString())
+
         println(r_back)
       }
       else
       {
-        println("Datos con formato incorrecto");
+        println("Datos con formato incorrecto o repetido");
       }
     }
     else{
